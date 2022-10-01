@@ -1,10 +1,6 @@
 package code;
 
-import java.util.HashMap;
-
 public class ConjureAnimals {
-
-	private HashMap<String, Animal> animals = AnimalHelper.makeMap();
 	
 	private final String animalName;
 	public final Animal animal;
@@ -15,10 +11,15 @@ public class ConjureAnimals {
 	//prof bonus, attacking stat, attack1 dice, attack2 dice, numberPerspell
 	
 	
+	//getting animals can be from file explorer
+	//you take the animal name and hash it and go to where that file is held
+	//there also has to be some manager for adding new animals to hashMap like file system
+	//also needs to able to verify intgrety over systems that it works
+	
 	
 	public ConjureAnimals(String animalName, int level) {
 		this.animalName = animalName;
-		animal = animals.get(animalName);
+		animal = AnimalHelper.getAnimal(animalName);
 		numberOfAnimals = animal.numberOf;
 		
 	}
@@ -50,6 +51,6 @@ public class ConjureAnimals {
 			//second set of attacks if any
 			
 		}
-		return 0;
+		return totalDamage;
 	}
 }

@@ -4,6 +4,9 @@ public interface Dice  {
 
 	public static int roll(String die) {
 		
+		//takes input such as "4d6" or "d11" and computes result
+		//TODO: doesn't get truly random results and needs additional functionality such as "2d20k1"
+		
 		//parsing number of dice used
 		int numberOfDice = 0;
 		int dLoc = die.indexOf('d');
