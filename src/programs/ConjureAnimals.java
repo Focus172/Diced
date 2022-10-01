@@ -1,6 +1,7 @@
-package code;
+package programs;
 
 import monsters.Animal;
+import monsters.AnimalHelper;
 
 public class ConjureAnimals {
 	

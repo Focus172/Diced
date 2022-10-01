@@ -1,7 +1,4 @@
-package code;
-
-import monsters.Animal;
-import monsters.MonsterReference;
+package monsters;
 
 public interface AnimalHelper {
 

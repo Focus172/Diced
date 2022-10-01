@@ -1,4 +1,4 @@
-package code;
+package programs;
 
 public interface Dice  {
 
