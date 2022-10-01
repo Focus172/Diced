@@ -1,15 +1,30 @@
 package code;
 
-
+import monsters.Animal;
+import monsters.MonsterReference;
 
 public interface AnimalHelper {
 
-	//acsess file system to get animals
+	//access file system to get animals
 	
-	public static String getAnimalDetails(String animalName) {
+	public static Animal getAnimalDetails(String animalName) {
+		
+
+		String details = MonsterReference.getDetails(animalName);
+		
+		//getting animals can be from file explorer
+		//you take the animal name and hash it and go to where that file is held
+		//there also has to be some manager for adding new animals to hashMap like file system
+		//also needs to able to verify integrity over systems that it works
 		
 		
-		return "";
+		//animals are listed as following
+		//toHit, damage, attack1Dice, attack2Dice, type1, type2, numberPerSpell
+
+		
+		//this meathod is now responsible for parsing data into animal object
+		
+		return new Animal(); //currently just a black bear
 	}
 	
 	

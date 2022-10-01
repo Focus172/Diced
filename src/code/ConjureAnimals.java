@@ -1,57 +1,45 @@
 package code;
 
+import monsters.Animal;
+
 public class ConjureAnimals {
 	
-	private final String animalName;
-	private final int toHit;
-	private final int damageBonus;
-	private final String attack1Dice;
-	private final String attack2Dice;
-	private final String damageType1;
-	private final String damageType2;
+	private String animalName;
+	private final Animal ani;
+
+	private int toHit;
+	private int damageBonus;
+	private String attack1Dice;
+	private String attack2Dice;
+	private String damageType1;
+	private String damageType2;
 
 	private int numberOfAnimals;
 	
-	
-	//animals are listed as following
-	//prof bonus, attacking stat, attack1 dice, attack2 dice, numberPerspell
-	
-	
-	//getting animals can be from file explorer
-	//you take the animal name and hash it and go to where that file is held
-	//there also has to be some manager for adding new animals to hashMap like file system
-	//also needs to able to verify intgrety over systems that it works
-	
-	
 	public ConjureAnimals(String animalName, int level) {
 		this.animalName = animalName;
-		String aniStats = AnimalHelper.getAnimalDetails(animalName);
+		ani = AnimalHelper.getAnimalDetails(animalName);
 		
+		this.toHit = ani.toHit;
+		this.damageBonus = ani.damageBonus;
+		this.attack1Dice = ani.attack1Dice;
+		this.attack2Dice = ani.attack2Dice;
+		this.damageType1 = ani.damageType1;
+		this.damageType2 = ani.damageType2;
 		
-		//this should be parsed from animalStats but just using black bear to test
-		toHit = 4; 
-		damageBonus = 2;
-		attack1Dice = "d6";
-		attack2Dice = "2d4";
-		damageType1 = "piercing";
-		damageType2 = "slashing";
-		
-		numberOfAnimals = 4 * ((level-1)/2);
+		numberOfAnimals = ani.numberOfAnimals * (level-1)/2;
 	}
 	
+
+	//used to kill off animals without having to make a new object
 	public void setAnimals(int newAnimals) {
 		numberOfAnimals = newAnimals;
 	}
-	/*
-	
-	public String turn(int ac) {
-		return numberOfAnimals + 
-				" " + animalName +
-				" hit 4 times and crit 1 time for a total of " + runDamage(ac) + " bludgeoning damage";
-	}
-	*/
 	
 	public String runDamage(int ac) {
+		
+		//TODO: make this code human readable
+		
 		int damage1 = 0;
 		int damage2 = 0;
 		int hits = 0;
@@ -69,9 +57,10 @@ public class ConjureAnimals {
 					hits++;
 					damage1 += Dice.roll(attack1Dice) + damageBonus;
 				} else {
-					//still count data from miss
+					//TODO: count data from miss
 				}
 			}
+			
 			
 			//second set of attacks if any
 			if (!attack2Dice.equals("")) {
@@ -83,7 +72,7 @@ public class ConjureAnimals {
 					hits++;
 					damage2 += Dice.roll(attack1Dice) + damageBonus;
 				} else {
-					//still count data from miss
+					//TODO: count data from miss
 				}
 			}
 		}

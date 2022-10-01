@@ -28,10 +28,13 @@ class DiceTester {
 		//assertTrue(Dice.roll(6)%1.0 == 0.0);
 		//assertTrue(Dice.roll("aoufbaou") == -1);
 		
+		/*
 		ConjureAnimals blackBear = new ConjureAnimals("black bear", 3);
 		for (int i = 1; i < 25; i++) {
 			System.out.println(blackBear.runDamage(i));
 		}
+		*/
+		
 		
 	}
 
