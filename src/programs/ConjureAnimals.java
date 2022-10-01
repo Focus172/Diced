@@ -22,7 +22,7 @@ public class ConjureAnimals {
 		ani = AnimalHelper.getAnimalDetails(animalName);
 		
 		this.toHit = ani.toHit;
-		this.damageBonus = ani.damageBonus;
+		this.damageBonus = ani.damage;
 		this.attack1Dice = ani.attack1Dice;
 		this.attack2Dice = ani.attack2Dice;
 		this.damageType1 = ani.damageType1;

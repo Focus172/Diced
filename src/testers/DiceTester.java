@@ -6,6 +6,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import monsters.MonsterReference;
 import programs.ConjureAnimals;
 import programs.Dice;
 
@@ -28,12 +29,14 @@ class DiceTester {
 		//assertTrue(Dice.roll(6)%1.0 == 0.0);
 		//assertTrue(Dice.roll("aoufbaou") == -1);
 		
-		/*
+		MonsterReference.createCollection();
+
 		ConjureAnimals blackBear = new ConjureAnimals("black bear", 3);
-		for (int i = 1; i < 25; i++) {
-			System.out.println(blackBear.runDamage(i));
-		}
-		*/
+		System.out.println(blackBear.runDamage(15));
+		ConjureAnimals brownBear = new ConjureAnimals("brown bear", 3);
+		System.out.println(brownBear.runDamage(15));
+		ConjureAnimals giantEagle = new ConjureAnimals("giant eagle", 3);
+		System.out.println(giantEagle.runDamage(15));
 		
 		
 	}

@@ -9,6 +9,18 @@ public interface AnimalHelper {
 
 		String details = MonsterReference.getDetails(animalName);
 		
+		//"black bear", "4:2:d6:2d4:piercing:slashing:4"
+		
+		String[] parsed = details.split(":");
+		
+		return new Animal(Integer.parseInt(parsed[0]),
+				Integer.parseInt(parsed[1]),
+				parsed[2],
+				parsed[3],
+				parsed[4],
+				parsed[5],
+				Integer.parseInt(parsed[6]));
+		
 		//getting animals can be from file explorer
 		//you take the animal name and hash it and go to where that file is held
 		//there also has to be some manager for adding new animals to hashMap like file system
@@ -21,7 +33,7 @@ public interface AnimalHelper {
 		
 		//this meathod is now responsible for parsing data into animal object
 		
-		return new Animal(); //currently just a black bear
+		//return new Animal(); //currently just a black bear
 	}
 	
 	
