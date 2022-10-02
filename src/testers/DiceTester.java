@@ -29,7 +29,7 @@ class DiceTester {
 		//assertTrue(Dice.roll(6)%1.0 == 0.0);
 		//assertTrue(Dice.roll("aoufbaou") == -1);
 		
-		MonsterReference.createCollection();
+		//MonsterReference.createCollection();
 
 		ConjureAnimals blackBear = new ConjureAnimals("black bear", 3);
 		System.out.println(blackBear.runDamage(15));
@@ -37,7 +37,10 @@ class DiceTester {
 		System.out.println(brownBear.runDamage(15));
 		ConjureAnimals giantEagle = new ConjureAnimals("giant eagle", 3);
 		System.out.println(giantEagle.runDamage(15));
+		ConjureAnimals ape = new ConjureAnimals("ape", 3);
+		System.out.println(ape.runDamage(15));
 		
+		//System.out.println(Dice.rollAdv(20));
 		
 	}
 

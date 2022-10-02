@@ -22,8 +22,20 @@ public interface Dice  {
 		return result;
 	}
 	
+	/*
+	public static int rollAdv (String die) {
+		//only takes simple dice
+		//trims input to be nice currently
+		return Math.max(Dice.roll(die.substring(die.indexOf("d"))), Dice.roll(die.substring(die.indexOf("d"))));
+	}
+	*/
+	
 	//simpler meathod for rolling when nessisary
 	public static int roll(int die) {
 		return (int)(Math.random()*die)+1;
+	}
+	
+	public static int rollAdv (int die) {
+		return Math.max(roll(die), roll(die));
 	}
 }

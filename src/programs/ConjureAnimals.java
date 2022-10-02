@@ -2,6 +2,7 @@ package programs;
 
 import monsters.Animal;
 import monsters.AnimalHelper;
+import monsters.Elk;
 
 public class ConjureAnimals {
 	
@@ -46,6 +47,20 @@ public class ConjureAnimals {
 		int hits = 0;
 		int crits = 0;
 		
+		//if creature has advantage
+		
+		//i dont want to do this for all possible things
+		//if (ani instanceof Elk) {
+			// if (Elf.needsSave) { //request the relevant saving throw }
+		
+		//failed save result is in form of string 
+		//the string can sometimes start with A - explanation
+		//this indicates that what ever follows grants the following creatures advantage
+		
+		//}
+		//how about this class handles the fact there are multiple and does attack rolling while animal does damage
+		
+		
 		for (int i = 0; i < numberOfAnimals; i++) {
 			
 			//first set of damage if it exists
@@ -79,8 +94,8 @@ public class ConjureAnimals {
 		}
 		
 		if (damageType1.equals(damageType2)) {
-			return numberOfAnimals + " " + animalName +
-					" hit " + hits + " time(s) and crit " + crits +
+			return "Against an AC of " + ac + ", " + numberOfAnimals + " " + animalName +
+					"(s) hit " + hits + " time(s) and crit " + crits +
 					" time(s) for a total of " + (damage1+damage2) + " " + damageType1 + " damage";
 		} else {
 			return "Against an AC of " + ac + ", " + numberOfAnimals + " " + animalName +
