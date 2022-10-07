@@ -29,13 +29,11 @@ public interface MonsterReference {
 	}
 	
 	//checks that item reference is stored in collection
-	public static boolean verifyCache(String name) {
-		return new File("./objects/monsters/" + Utilities.toSha(name)).exists();
+	public static boolean verifyCache() {
+		return false;
+		//return new File("./objects/monsters/" + Utilities.toSha(name)).exists();
 	}
 	
 	//only should be called when requested by user but goes through each item
 	//compares it to a master list held somewhere else to make sure there is nothing missing
-	public static boolean verifyWholeCache() {
-		return false;
-	}
 }
